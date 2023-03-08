@@ -1,11 +1,71 @@
 {
   "Version": 1,
-  "Hash": "GZgijnpfbEP3x9dhqs4UVdesognXW0J4vPUbTkP/Yqc=",
+  "Hash": "6jhLjvG/0h6rxb87Zqv47FLouRHQadvzh4JPaEgTtlE=",
   "Source": "hw1",
   "BasePath": "_content/hw1",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "hw1\\wwwroot",
+      "Source": "hw1",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\css\\site.css",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\index.html",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\js\\site.js",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "js/site.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ]
 }

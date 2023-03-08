@@ -20,6 +20,7 @@ namespace hw1.Utilities
     {
         public static void AddTask(this IServiceCollection services){
             services.AddSingleton<IConnect,TaskService>();
+            
         }
     }
 }
