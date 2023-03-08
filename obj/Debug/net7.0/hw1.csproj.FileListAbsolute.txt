@@ -64,5 +64,5 @@ C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\scope
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\hw1.csproj.CopyComplete
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\hw1.genruntimeconfig.cache
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\ref\hw1.dll
-C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Data\task.json
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.staticwebassets.runtime.json
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Data\Task.json
