@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6jhLjvG/0h6rxb87Zqv47FLouRHQadvzh4JPaEgTtlE=",
+  "Hash": "OHAtGfj8tzzB4idCHSQ46qoWcB/sizy+nU8Q5ChORYw=",
   "Source": "hw1",
   "BasePath": "_content/hw1",
   "Mode": "Default",
@@ -34,6 +34,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\data\\task.html",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "data/task.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\task.html"
+    },
+    {
       "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\index.html",
       "SourceId": "hw1",
       "SourceType": "Discovered",
@@ -49,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\js\\login.js",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "js/login.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
       "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\js\\site.js",

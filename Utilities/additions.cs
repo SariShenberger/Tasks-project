@@ -16,10 +16,11 @@ using hw1.Services;
 
 namespace hw1.Utilities
 {
-    public static class additions
+    public static class Additions
     {
         public static void AddTask(this IServiceCollection services){
             services.AddSingleton<IConnect,TaskService>();
+            services.AddSingleton<IUser,UserService>();
             
         }
     }

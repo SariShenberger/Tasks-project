@@ -48,7 +48,6 @@ C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.d
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.runtimeconfig.json
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.dll
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.pdb
-C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
@@ -66,3 +65,13 @@ C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\hw1.g
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\obj\Debug\net7.0\ref\hw1.dll
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\hw1.staticwebassets.runtime.json
 C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Data\Task.json
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Data\Users.json
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\שרי\Documents\לימודים\יד\core\hw\hw1\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
