@@ -1,19 +1,14 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 
-
-namespace hw1.Services
+namespace tasks.Services
 {
     public static class TaskTokenService
     {
         private static SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SXkSqsKyNUyvGbnHs7ke2NCq8zQzNLW7mPmHbnZZ"));
-        private static string issuer = "https://task.com";
+        private static string issuer = "https://tasks.com";
         public static SecurityToken GetToken(List<Claim> claims) =>
             new JwtSecurityToken(
                 issuer,
@@ -32,7 +27,7 @@ namespace hw1.Services
                 ClockSkew = TimeSpan.Zero // remove delay of token when expire
             };
 
-        public static string WriteToken(SecurityToken token) =>
+        public static string WriteToken(SecurityToken token=null) =>
             new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

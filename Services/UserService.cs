@@ -1,11 +1,10 @@
-using System;
 using System.Security.Claims;
-using hw1.Models;
+using tasks.Models;
 using Microsoft.IdentityModel.Tokens;
 using System.Text.Json;
-using hw1.Interfaces;
+using tasks.Interfaces;
 
-namespace hw1.Services
+namespace tasks.Services
 {
     public class UserService : IUser
     {
@@ -17,9 +16,9 @@ namespace hw1.Services
 
         public UserService(IWebHostEnvironment webHost)
         {
-           this.webHost = webHost;
-           this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "Users.json");
-           using (var jsonFile = File.OpenText("Data/Users.json"))
+            this.webHost = webHost;
+            this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "Users.json");
+            using (var jsonFile = File.OpenText("Data/Users.json"))
             {
                 this.users = JsonSerializer.Deserialize<List<User>>(jsonFile.ReadToEnd(),
                 new JsonSerializerOptions()
@@ -29,16 +28,13 @@ namespace hw1.Services
             }
         }
         private void saveToFile()
-                {
-                    File.WriteAllText(filePath, JsonSerializer.Serialize(users));
-                }
+        {
+            File.WriteAllText(filePath, JsonSerializer.Serialize(users));
+        }
 
         public SecurityToken login(User user)
         {
-            var dt = DateTime.Now;
-            if (user.UserName != "Sari"
-            || user.Password != $"S{dt.Year}#{dt.Day}!"
-            || user.Admin == false)
+            if ( user.Admin == false)
             {
                 User findUser = users.Where(u => u.Password == user.Password).FirstOrDefault();
                 if (findUser != null)
@@ -47,7 +43,6 @@ namespace hw1.Services
                     {
                         new Claim("type", "User"),
                         new Claim("password", user.Password),
-                        // new Claim("ClearanceLevel", user.ClearanceLevel.ToString()),
                     };
 
                     var token = TaskTokenService.GetToken(claims);
@@ -66,23 +61,11 @@ namespace hw1.Services
             }
             return null;
         }
-        public SecurityToken GenerateBadge(User user)
-        {
-            var claims = new List<Claim>
-            {
-                new Claim("type", "User"),
-                new Claim("password", user.Password),
-                // new Claim("ClearanceLevel", user.ClearanceLevel.ToString()),
-            };
-            var token = TaskTokenService.GetToken(claims);
-            return token;
-        }
-
-         public List<User> GetAll()
+       
+        public List<User> GetAll()
         {
             return users;
         }
-
 
         public User Get(string password)
         {

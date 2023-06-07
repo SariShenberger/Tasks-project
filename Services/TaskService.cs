@@ -1,10 +1,8 @@
-using hw1.Models;
-using hw1.Interfaces;
+using tasks.Models;
+using tasks.Interfaces;
 using System.Text.Json;
 
-
-
-namespace hw1.Services
+namespace tasks.Services
 {
     public class TaskService : IConnect
     {
@@ -12,11 +10,10 @@ namespace hw1.Services
         private IWebHostEnvironment webHost;
         private string filePath;
 
-
         public TaskService(IWebHostEnvironment webHost)
         {
             this.webHost = webHost;
-            this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "task.json");
+            this.filePath = Path.Combine(webHost.ContentRootPath, "Data", "Task.json");
             using (var jsonFile = File.OpenText(filePath))
             {
                 tasks = JsonSerializer.Deserialize<List<Item>>(jsonFile.ReadToEnd(),
@@ -37,17 +34,18 @@ namespace hw1.Services
             return tasks.Where(t => t.UserPassword == password).ToList();
         }
 
-
-        public Item Get(string password, int id)
+        public Item Get(int id)
         {
-            return GetAll(password).FirstOrDefault(i => i.Id == id);
+            return tasks.FirstOrDefault(i => i.Id == id);
         }
+
         public void Add(Item item)
         {
             item.Id = tasks.Max(i => i.Id) + 1;
             tasks.Add(item);
             saveToFile();
         }
+
         public bool Update(int id, Item newItem)
         {
             if (newItem.Id != id)
@@ -62,6 +60,7 @@ namespace hw1.Services
             }
             return false;
         }
+
         public bool Delete(int id)
         {
             var item = tasks.FirstOrDefault(i => i.Id == id);

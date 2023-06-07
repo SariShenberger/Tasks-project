@@ -1,4 +1,4 @@
-namespace hw1.Models
+namespace tasks.Models
 {
     public class User
     {

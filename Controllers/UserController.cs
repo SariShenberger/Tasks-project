@@ -1,59 +1,83 @@
-using System;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
-using hw1.Models;
-using hw1.Services;
-using hw1.Interfaces;
+using tasks.Models;
+using tasks.Services;
+using tasks.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 
-namespace hw1.Controllers;
-
+namespace Tasks.Controllers
+{
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-       private IUser UserService;
-        public UserController(IUser UserService)
-        {
-            this.UserService = UserService;
-        }
+         IUser UserService;
 
+        public UserController(IUser UserService) {
+            this.UserService=UserService;
+        }
+ 
         [HttpPost]
         [Route("[action]")]
-        public ActionResult<String> Login([FromBody] User user)
+        public ActionResult<String> Login([FromBody] User User)
         {
-            var token = UserService.login(user);
-            if (token == null)
-                return NotFound();
-            return new OkObjectResult(TaskTokenService.WriteToken(token));
-        }
-
-
-        [HttpPost]
-        [Route("[action]")]
-        [Authorize(Policy = "Admin")]
-        public IActionResult GenerateBadge([FromBody] User user)
-        {
-            user.Admin=false;
-            var token = UserService.GenerateBadge(user);
-            return new OkObjectResult(TaskTokenService.WriteToken(token));
+            var dt = DateTime.Now;
+            if (User.UserName != "Sari"
+            || User.Password != $"S{dt.Year}#{dt.Day}!"){
+                User.Admin=false;
+            } else{User.Admin=true;}
+            return new OkObjectResult(new{Token=TaskTokenService.WriteToken(UserService.login(User)),Admin=User.Admin});
         }
         [HttpGet]
-        [Route("[action]")]
         [Authorize(Policy = "Admin")]
-        public IEnumerable<User> Get(){
+
+        public IEnumerable<User> Get()
+        {
             return UserService.GetAll();
         }
-        [HttpGet]
-        [HttpGet("{password}")]
-        [Route("[action]")]
+
+        [HttpDelete("{id}")]
         [Authorize(Policy = "Admin")]
-        public User Get(string password){
-            return UserService.Get(password);
+        public ActionResult Delete (int id)
+        {
+            if (! UserService.Delete(id.ToString()))//
+                return NotFound();
+            return NoContent();            
         }
-    }
+        [HttpPost]
+        [Authorize(Policy = "Admin")]
+        public ActionResult Post( User user)
+        {
+            UserService.Add(user);
+            return CreatedAtAction(nameof(Post), new { id = user.Password }, user);
+        }
+           
+
+        [HttpPut("{password}")]
+        [Authorize(Policy = "Admin")]
+        public ActionResult Put(string password, User user)
+        {
+            UserService.Update(password, user);
+            return CreatedAtAction(nameof(Post), new { id = user.Password }, user);
+        }
+           
+    }}
+ 
+    //     [HttpPost]
+    //     [Route("[action]")]
+    //     [Authorize(Policy = "Admin")]
+    //     public IActionResult GenerateBadge([FromBody] Agent Agent)
+    //     {
+    //         var claims = new List<Claim>
+    //         {
+    //             new Claim("type", "Agent"),
+    //             new Claim("ClearanceLevel", Agent.ClearanceLevel.ToString()),
+    //         };
+
+    //         var token = FbiTokenService.GetToken(claims);
+
+    //         return new OkObjectResult(FbiTokenService.WriteToken(token));
+    //     }
+    // }
 
 
 

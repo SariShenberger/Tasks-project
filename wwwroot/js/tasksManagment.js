@@ -1,26 +1,31 @@
 const uri = '/Task';
 let tasks = [];
 
-function getItems() {
-    fetch(uri)
+const getToken=()=>{return sessionStorage.getItem('token').replace(/"/g, '');}
+
+const getItems=()=>{
+    const token= getToken();
+    fetch(uri,{
+        headers:{'Authorization': 'Bearer '+ token}
+    })
         .then(response => response.json())
         .then(data => _displayItems(data))
         .catch(error => console.error('Unable to get items.', error));
 }
 
-function addItem() {
+const addItem=()=> {
     const addNameTextbox = document.getElementById('add-name');
-
     const item = {
         doneOrNot: false,
         name: addNameTextbox.value.trim()
     };
-
+    const token= getToken();;
     fetch(uri, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ token
             },
             body: JSON.stringify(item)
         })
@@ -32,15 +37,19 @@ function addItem() {
         .catch(error => console.error('Unable to add item.', error));
 }
 
-function deleteItem(id) {
+const deleteItem=(id)=> {
+    const ok=confirm("Are you sure to remove this user?")
+    if(ok){
+    const token= getToken();
     fetch(`${uri}/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers:{'Authorization': 'Bearer '+ token}
         })
         .then(() => getItems())
         .catch(error => console.error('Unable to delete item.', error));
-}
+}}
 
-function displayEditForm(id) {
+const displayEditForm=(id)=> {
     const item = tasks.find(item => item.id === id);
 
     document.getElementById('edit-name').value = item.name;
@@ -49,19 +58,20 @@ function displayEditForm(id) {
     document.getElementById('editForm').style.display = 'block';
 }
 
-function updateItem() {
+const updateItem=()=> {
     const itemId = document.getElementById('edit-id').value;
     const item = {
         id: parseInt(itemId, 10),
         doneOrNot: document.getElementById('edit-doneOrNot').checked,
         name: document.getElementById('edit-name').value.trim()
     };
-
+    const token= getToken();;
     fetch(`${uri}/${itemId}`, {
             method: 'PUT',
             headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer '+ token
             },
             body: JSON.stringify(item)
         })
@@ -73,17 +83,17 @@ function updateItem() {
     return false;
 }
 
-function closeInput() {
+const closeInput=()=> {
     document.getElementById('editForm').style.display = 'none';
 }
 
-function _displayCount(itemCount) {
+const _displayCount=(itemCount)=> {
     const name = (itemCount === 1) ? 'task' : 'task kinds';
 
     document.getElementById('counter').innerText = `${itemCount} ${name}`;
 }
 
-function _displayItems(data) {
+const _displayItems=(data)=> {
     const tBody = document.getElementById('tasks');
     tBody.innerHTML = '';
 

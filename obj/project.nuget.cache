@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0VkS7f+eHZlLw6gGiaSt4ik0qa+9j+UbRSzv0Oj7ol9PB31UhzODf9j3pOmQ1NX9l+EwSOu/rg+8xGtqYFT+ug==",
+  "dgSpecHash": "bhnB3U383y1vVyi3djE3mtfy0wdgHxA/OUvxBbKxM+HN+nyb8UqNvLJY1NeonhVrKgHoztkVwKadU7MPBWUerg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\hw1.csproj",
+  "projectFilePath": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\hw1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\שרי\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.4\\microsoft.aspnetcore.authentication.jwtbearer.5.0.4.nupkg.sha512",
     "C:\\Users\\שרי\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.0\\microsoft.aspnetcore.openapi.7.0.0.nupkg.sha512",

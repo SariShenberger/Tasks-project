@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OHAtGfj8tzzB4idCHSQ46qoWcB/sizy+nU8Q5ChORYw=",
+  "Hash": "098hKYxKbJwSPmI/pJkaNUH/g7k/4fKYABZWCK7qNz4=",
   "Source": "hw1",
   "BasePath": "_content/hw1",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "hw1\\wwwroot",
       "Source": "hw1",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\css\\site.css",
       "SourceId": "hw1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -34,12 +34,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\data\\task.html",
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\data\\tasksManagment.html",
       "SourceId": "hw1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
-      "RelativePath": "data/task.html",
+      "RelativePath": "data/tasksManagment.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -48,13 +48,30 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\data\\task.html"
+      "OriginalItemSpec": "wwwroot\\data\\tasksManagment.html"
     },
     {
-      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\data\\usersManagement.html",
       "SourceId": "hw1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "data/usersManagement.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\data\\usersManagement.html"
+    },
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\index.html",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -68,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\js\\login.js",
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\js\\login.js",
       "SourceId": "hw1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
       "RelativePath": "js/login.js",
       "AssetKind": "All",
@@ -85,12 +102,12 @@
       "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
-      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\js\\tasksManagment.js",
       "SourceId": "hw1",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\hw1\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
       "BasePath": "_content/hw1",
-      "RelativePath": "js/site.js",
+      "RelativePath": "js/tasksManagment.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,7 +116,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\site.js"
+      "OriginalItemSpec": "wwwroot\\js\\tasksManagment.js"
+    },
+    {
+      "Identity": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\js\\usersManagment.js",
+      "SourceId": "hw1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\שרי\\Documents\\לימודים\\יד\\core\\hw\\Task\\wwwroot\\",
+      "BasePath": "_content/hw1",
+      "RelativePath": "js/usersManagment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\usersManagment.js"
     }
   ]
 }
