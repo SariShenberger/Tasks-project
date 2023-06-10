@@ -10,22 +10,25 @@ namespace Tasks.Controllers
     [Route("[controller]")]
     public class UserController : ControllerBase
     {
-         IUser UserService;
+        IUser UserService;
 
-        public UserController(IUser UserService) {
-            this.UserService=UserService;
+        public UserController(IUser UserService)
+        {
+            this.UserService = UserService;
         }
- 
+
         [HttpPost]
         [Route("[action]")]
         public ActionResult<String> Login([FromBody] User User)
         {
             var dt = DateTime.Now;
             if (User.UserName != "Sari"
-            || User.Password != $"S{dt.Year}#{dt.Day}!"){
-                User.Admin=false;
-            } else{User.Admin=true;}
-            return new OkObjectResult(new{Token=TaskTokenService.WriteToken(UserService.login(User)),Admin=User.Admin});
+            || User.Password != $"S{dt.Year}#{dt.Day}!")
+            {
+                User.Admin = false;
+            }
+            else { User.Admin = true; }
+            return new OkObjectResult(new { Token = TaskTokenService.WriteToken(UserService.login(User)), Admin = User.Admin });
         }
         [HttpGet]
         [Authorize(Policy = "Admin")]
@@ -37,20 +40,21 @@ namespace Tasks.Controllers
 
         [HttpDelete("{id}")]
         [Authorize(Policy = "Admin")]
-        public ActionResult Delete (int id)
+        public ActionResult Delete(int id)
         {
-            if (! UserService.Delete(id.ToString()))//
+            if (!UserService.Delete(id.ToString()))//
                 return NotFound();
-            return NoContent();            
+            return NoContent();
         }
         [HttpPost]
         [Authorize(Policy = "Admin")]
-        public ActionResult Post( User user)
+        public ActionResult Post(User user)
         {
-            UserService.Add(user);
-            return CreatedAtAction(nameof(Post), new { id = user.Password }, user);
+            if (UserService.Add(user))
+                return CreatedAtAction(nameof(Post), new { id = user.Password }, user);
+            return NotFound();
         }
-           
+
 
         [HttpPut("{password}")]
         [Authorize(Policy = "Admin")]
@@ -59,25 +63,26 @@ namespace Tasks.Controllers
             UserService.Update(password, user);
             return CreatedAtAction(nameof(Post), new { id = user.Password }, user);
         }
-           
-    }}
- 
-    //     [HttpPost]
-    //     [Route("[action]")]
-    //     [Authorize(Policy = "Admin")]
-    //     public IActionResult GenerateBadge([FromBody] Agent Agent)
-    //     {
-    //         var claims = new List<Claim>
-    //         {
-    //             new Claim("type", "Agent"),
-    //             new Claim("ClearanceLevel", Agent.ClearanceLevel.ToString()),
-    //         };
 
-    //         var token = FbiTokenService.GetToken(claims);
+    }
+}
 
-    //         return new OkObjectResult(FbiTokenService.WriteToken(token));
-    //     }
-    // }
+//     [HttpPost]
+//     [Route("[action]")]
+//     [Authorize(Policy = "Admin")]
+//     public IActionResult GenerateBadge([FromBody] Agent Agent)
+//     {
+//         var claims = new List<Claim>
+//         {
+//             new Claim("type", "Agent"),
+//             new Claim("ClearanceLevel", Agent.ClearanceLevel.ToString()),
+//         };
+
+//         var token = FbiTokenService.GetToken(claims);
+
+//         return new OkObjectResult(FbiTokenService.WriteToken(token));
+//     }
+// }
 
 
 

@@ -36,12 +36,8 @@ public class TaskController : ControllerBase
     [Authorize(Policy = "User")]
     public ActionResult Post(Item task)
     {
-
-        string tokenStr = Request.Headers.Authorization;
-        string newToken = tokenStr.Split(' ')[1];
-        var token = new JwtSecurityToken(jwtEncodedString: newToken);
-        string id = token.Claims.First(c => c.Type == "id").Value;
-        task.Id = int.Parse(id);
+         string token = Request.Headers.Authorization;
+        task.UserPassword = this.GetTokenPassword(idtoken: token);
         TaskService.Add(task);
         return CreatedAtAction(nameof(Post), new { id = task.Id }, task);
     }
@@ -66,8 +62,6 @@ public class TaskController : ControllerBase
 
     private string GetTokenPassword(string idtoken)
     {
-        // var token = new JwtSecurityToken(jwtEncodedString: idtoken);
-        // string tokenStr=Request.Headers.Authorization;
         string newToken=idtoken.Split(' ')[1];
         var token = new JwtSecurityToken(jwtEncodedString: newToken);
         string password = token.Claims.First(c => c.Type == "password").Value;

@@ -17,7 +17,7 @@ const getItems=()=> {
 const addItem=()=> {
     const addNameTextbox = document.getElementById('add-userName').value;
     const addPasswordTextbox = document.getElementById('add-userPassword').value;
-
+console.log(addNameTextbox,addPasswordTextbox);
     const item = {
         admin: false,
         userName: addNameTextbox,

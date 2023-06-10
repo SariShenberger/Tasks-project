@@ -27,7 +27,7 @@ namespace tasks.Services
                 ClockSkew = TimeSpan.Zero // remove delay of token when expire
             };
 
-        public static string WriteToken(SecurityToken token=null) =>
+        public static string WriteToken(SecurityToken? token =null) =>
             new JwtSecurityTokenHandler().WriteToken(token);
     }
 }

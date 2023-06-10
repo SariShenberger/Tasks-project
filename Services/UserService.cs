@@ -34,7 +34,7 @@ namespace tasks.Services
 
         public SecurityToken login(User user)
         {
-            if ( user.Admin == false)
+            if (user.Admin == false)
             {
                 User findUser = users.Where(u => u.Password == user.Password).FirstOrDefault();
                 if (findUser != null)
@@ -61,7 +61,7 @@ namespace tasks.Services
             }
             return null;
         }
-       
+
         public List<User> GetAll()
         {
             return users;
@@ -71,11 +71,20 @@ namespace tasks.Services
         {
             return GetAll().FirstOrDefault(i => i.Password == password);
         }
-        public void Add(User user)
+        public bool Add(User user)
         {
-            user.Password = users.Max(i => i.Password) + 1;
-            users.Add(user);
-            saveToFile();
+            if (user.UserName != null && user.Password != null)
+            {
+                User find = users.FirstOrDefault((u) => u.UserName == user.UserName && u.Password == user.Password);
+                if (find != null)
+                {
+
+
+                    users.Add(user);
+                    saveToFile();
+                }
+                return true;
+            }return false;
         }
         public bool Update(string password, User newUser)
         {
@@ -100,7 +109,7 @@ namespace tasks.Services
             return true;
         }
 
-
+       
     }
 
 }
